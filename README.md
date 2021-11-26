@@ -185,7 +185,7 @@ rivers <- ne_download(scale = 10, type = 'rivers_lake_centerlines',
 ```
 
 We can take a quick peek to make sure everything is there…
-<img src="SpeciesMapping_files/figure-gfm/Figure1.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure1.png" style="display: block; margin: auto;" />
 Pretty basic, but it’s a start.
 
 We’ll want to add some information about topography to make things a bit
@@ -252,7 +252,7 @@ For the fun of it, we can take a look at how this all works. The extent
 of the area where we will download elevational data is bounded by the
 dashed line, the solid line shows the extent of our map, and we can see
 Panamá in the center.
-<img src="SpeciesMapping_files/figure-gfm/Figure2.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure2.png" style="display: block; margin: auto;" />
 
 ### Obtaining elevation data
 
@@ -293,7 +293,7 @@ colnames(elevDF)<-c("x", "y", "elevation")
 elevDF[, 3][elevDF[, 3] < 1500] <- NA
 ```
 
-<img src="SpeciesMapping_files/figure-gfm/Figure3.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure3.png" style="display: block; margin: auto;" />
 
 This looks right – we can see the Cordillera de Talamanca in the western
 part of the country, along with some other scattered peaks. The color
@@ -316,7 +316,7 @@ which shape – no worries, we can use the `show_point_shapes()` from the
 ggpubr::show_point_shapes()
 ```
 
-<img src="SpeciesMapping_files/figure-gfm/Figure4.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure4.png" style="display: block; margin: auto;" />
 
 It is pretty clear that these are all just variations on the same few
 themes, and it might not be clear what the difference is between, say,
@@ -435,7 +435,7 @@ occMap <-
 occMap
 ```
 
-<img src="SpeciesMapping_files/figure-gfm/Figure5.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure5.png" style="display: block; margin: auto;" />
 
 Great – everything looks like it has come out in the right spot.
 
@@ -653,7 +653,7 @@ occStateMap <-
 occStateMap
 ```
 
-<img src="SpeciesMapping_files/figure-gfm/Figure6.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure6.png" style="display: block; margin: auto;" />
 
 Again, remember that the **Plots** panel is a bit misleading, but if you
 save the output, it should look like the above image. Now let’s try the
@@ -795,7 +795,7 @@ occMapMulti <-
 occMapMulti
 ```
 
-<img src="SpeciesMapping_files/figure-gfm/Figure7.tif" style="display: block; margin: auto;" />
+<img src="SpeciesMapping_files/figure-gfm/Figure7.png" style="display: block; margin: auto;" />
 
 That’s it\! I hope this will help you make visually appealing,
 informative, and consistent species occurrence maps – if you have any
