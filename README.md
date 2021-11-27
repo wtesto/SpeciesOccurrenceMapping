@@ -492,18 +492,18 @@ Then, for the line of plotting code that starts
 modify it so it looks like this (basically change 
 "color" to "fill" and move out of aes:
 
-  geom_sf(data = pointsFiltered, aes(geometry = geometry,
+  `geom_sf(data = pointsFiltered, aes(geometry = geometry,
                                      shape = scientificName,
                                      color = scientificName),
-                                     fill = fillColor, size = 2)+
+                                     fill = fillColor, size = 2)+`
                                      
 and then change this line
 
-  scale_color_manual(values = fillColor)+
+  `scale_color_manual(values = fillColor)+`
   
 to this:
 
-  scale_color_manual(values = "black")+
+ `scale_color_manual(values = "black")+`
   
 Of course, you can pick a different color for the border, but the
 basic idea is that for pch values of 21-25, `color` now refers to
