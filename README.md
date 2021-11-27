@@ -70,6 +70,15 @@ condense things a bit. As we’ll see, the structure of this code also
 works nicely with loops or (preferably) the `purrr` package if you want
 to automate this process for a group of taxa.
 
+There are a total of three sections in this walkthrough, each of which 
+will focus on making maps with different types of inputs. For the sake 
+of clarity, I include all the steps in Part 1, but have focused on just
+the important differences in parts 2 and 3. If you want to be able to 
+make these maps "out of the box", you can use the R scripts that are
+available in this repository. There are three of them, and they all have
+all of the steps that you need to produce a finished map. Each script 
+filename starts with a prefix that corresponds to the parts of this walkthrough.
+
 # Part 1: Single species, whole country occurrence map
 
 ### Loading & checking occurrence data
