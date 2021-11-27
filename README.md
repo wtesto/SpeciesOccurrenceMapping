@@ -351,7 +351,9 @@ pch <- 17
 
 fillColor <- colourPicker(numCols = 1)
 ```
+
 Here's what the interface looks like -- pretty cool!
+
 <img src="SpeciesMapping_files/figure-gfm/FigureA.png" style="display: block; margin: auto;" />
 
 -----
