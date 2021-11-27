@@ -351,7 +351,10 @@ pch <- 17
 
 fillColor <- colourPicker(numCols = 1)
 ```
+Here's what the interface looks like -- pretty cool!
+<img src="SpeciesMapping_files/figure-gfm/FigureA.png" style="display: block; margin: auto;" />
 
+-----
 The last thing that we need to do is specify the position of our symbol
 legend, which will show the nice blue triangle we have specified, along
 with the name of the taxon shown in the map. I prefer to place this
