@@ -811,6 +811,30 @@ occMapMulti
 
 <img src="SpeciesMapping_files/figure-gfm/Figure7.png" style="display: block; margin: auto;" />
 
+
+Now that we have the plot, we can save it as before, but we just need to change a few things 
+to be able to save them correctly. 
+
+``` r
+nameSave<-get("taxon") %>% sub("\\s","_",.)
+nameSave<-paste(nameSave[1],nameSave[2],nameSave[3],sep="&") ##
+saveDirectory<-paste("plots/",nameSave,sep="")
+dir.create(saveDirectory)
+
+fileNameTiff<-paste(nameSave,".tiff",sep="")
+fileNamePDF<-paste(nameSave,".PDF",sep="")
+
+
+ggsave(filename = fileNameTiff, path = saveDirectory, width = 15, height = 15, units = "cm", 
+       device = 'tiff', dpi=300)
+
+ggsave(filename = fileNamePDF, path = saveDirectory, width = 15, height = 15, units = "cm", 
+       device = 'pdf', dpi=300)
+
+dev.off()
+```
+
+
 That’s it\! I hope this will help you make visually appealing,
 informative, and consistent species occurrence maps – if you have any
 comments or questions, let me know\!
