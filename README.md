@@ -458,23 +458,49 @@ Great – everything looks like it has come out in the right spot.
 **Note:** if you want to edit something in the map other than the items
 we have already set, you can modify some of the following:
 
-**-If you want to change the color of the ocean** -Modify the `fill`
+**-If you want to change the color of the ocean** 
+-Modify the `fill`
 argument on the line that starts `geom_sf(data = ocean`
 
-**-If you want to change the color of Panamá** -Modify the `fill`
+**-If you want to change the color of Panamá** 
+-Modify the `fill`
 argument on the line that starts `geom_sf(data = focalArea`
 
-**-If you want to change the position or size of the scale bar** -Adjust
+**-If you want to change the position or size of the scale bar** 
+-Adjust
 the arguments for the `annotation_scale` function
 
-**-If you want to change the position or type of the arrow** -Adjust the
+**-If you want to change the position or type of the arrow** 
+-Adjust the
 arguments for the `annotation_north_arrow` function
 
 **-If you want to change the color/shading of the mountainous areas**
 -Adjust the arguments for the `scale_fill_gradient` function
 
 **-If you want to change the details (color, bounding box) of the
-legend** -Modify the arguments for the `legend.box.background` function
+legend** 
+-Modify the arguments for the `legend.box.background` function
+
+**-If you want to use a symbol with a border** 
+-This is a little bit more complicated:
+
+First, pick a pch value between 21 and 25
+Then, for the line of plotting code that starts 
+`geom_sf(data = pointsFiltered`,
+modify it so it looks like this (basically change 
+"color" to "fill" and move out of aes:
+  geom_sf(data = pointsFiltered, aes(geometry = geometry,
+                                     shape = scientificName,
+                                     color = scientificName),
+                                     fill = fillColor, size = 2)+
+and then change this line
+  scale_color_manual(values = fillColor)+
+to this:
+  scale_color_manual(values = "black")+
+  
+Of course, you can pick a different color for the border, but the
+basic idea is that for pch values of 21-25, `color` now refers to
+the border and `fill` refers to the inside color of the symbol.
 
 -----
 
