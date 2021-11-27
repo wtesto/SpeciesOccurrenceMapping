@@ -484,12 +484,15 @@ legend**
 **-If you want to use a symbol with a border** 
 -This is a little bit more complicated:
 
-First, pick a pch value between 21 and 25
-Then, for the line of plotting code that starts 
+First, pick a pch value between 21 and 25.
 
-`geom_sf(data = pointsFiltered`,
+Then, take this bit of code in the plotting block
 
-modify it so it looks like this (basically change 
+`geom_sf(data = pointsFiltered, aes(geometry = geometry,
+                                     shape = scientificName,
+                                     color = scientificName), size = 2)+`
+
+and modify it so it looks like this (basically change 
 "color" to "fill" and move out of aes:
 
   `geom_sf(data = pointsFiltered, aes(geometry = geometry,
