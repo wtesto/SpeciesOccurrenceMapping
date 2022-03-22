@@ -63,7 +63,7 @@ elevDF[, 3][elevDF[, 3] < 1500] <- NA #filter only data >=1500m
 
 
 #set symbol shape, color, and legend position
-pch <- 17
+pch <- 24
 
 fillColor <- colourPicker(numCols = 1)
 
@@ -83,9 +83,10 @@ occMap <-
           linetype = "dashed", fill = "#acbdac", alpha = 0.2)+
   geom_sf(data = pointsFiltered, aes(geometry = geometry,
                                      shape = scientificName,
-                                     color = scientificName), size = 2)+
+                                     color = scientificName),
+                                     fill = fillColor, size = 2)+
   scale_shape_manual(values = pch)+
-  scale_color_manual(values = fillColor)+
+  scale_color_manual(values = "white")+
   coord_sf(
     xlim = c(limit["xmin"], limit["xmax"]),
     ylim = c(limit["ymin"], limit["ymax"])) +
@@ -109,8 +110,8 @@ occMap <-
                                         size = 0.3), 
         panel.background = element_rect(fill = "#f0f8ff"), 
         panel.border = element_rect(fill = NA))+
-  guides(fill=FALSE)+
-  guides(shape=FALSE)+
+  guides(fill="none")+
+  guides(shape="none")+
   guides(color=guide_legend(override.aes = list(shape = pch, 
                                                 fill=fillColor, size =3)))
 

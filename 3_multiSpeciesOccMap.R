@@ -109,8 +109,8 @@ occMapMulti <-
                                         size = 0.3), 
         panel.background = element_rect(fill = "#f0f8ff"), 
         panel.border = element_rect(fill = NA))+
-  guides(fill=FALSE)+
-  guides(shape=FALSE)+
+  guides(fill="none")+
+  guides(shape="none")+
   guides(color=guide_legend(override.aes = list(shape = pchs, 
                                                 fill=fillColors, size =3)))
 
